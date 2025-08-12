@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Sample Car",
+    "packageType": "Full Package + Ceramic Coating",
+    "badges": [
+      {
+        "text": "Exterior",
+        "class": "badge bg-primary"
+      },
+      {
+        "text": "Interior",
+        "class": "badge bg-success"
+      },
+      {
+        "text": "Ceramic Coating",
+        "class": "badge bg-warning"
+      },
+      {
+        "text": "2.5 Hours",
+        "class": "badge bg-info"
+      }
+    ],
+    "afterPhotos": {
+      "description": "Beautiful finished result with ceramic coating applied",
+      "hasContent": true
+    },
+    "finalVideo": {
+      "description": "Final walkaround showing the completed detailing work",
+      "hasContent": true
+    }
+  }
+]

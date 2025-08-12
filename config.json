@@ -1,0 +1,43 @@
+{
+  "gallery": {
+    "addCarButton": {
+      "enabled": true,
+      "text": "Add Another Car",
+      "icon": "fas fa-plus"
+    },
+    "removeCarButton": {
+      "enabled": true,
+      "text": "Remove Car",
+      "icon": "fas fa-trash"
+    },
+    "maxCars": 20,
+    "defaultPackageTypes": [
+      "Exterior Only",
+      "Interior Only", 
+      "Full Package",
+      "Full Package + Ceramic",
+      "Premium Full Package",
+      "Custom Package"
+    ],
+    "defaultDurations": [
+      "1 Hour",
+      "1.5 Hours",
+      "2 Hours",
+      "2.5 Hours",
+      "3 Hours",
+      "3.5 Hours",
+      "4 Hours"
+    ]
+  },
+  "features": {
+    "videoUpload": true,
+    "photoUpload": true,
+    "descriptionField": true,
+    "autoSave": false
+  },
+  "styling": {
+    "theme": "dark",
+    "primaryColor": "#8b5cf6",
+    "accentColor": "#a855f7"
+  }
+}

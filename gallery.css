@@ -1,0 +1,370 @@
+/* Gallery Page Specific Styles */
+body {
+    padding-top: 80px; /* Account for fixed navigation bar */
+}
+
+.gallery-hero {
+    background: linear-gradient(135deg, var(--mdc-theme-primary) 0%, var(--mdc-theme-secondary) 100%);
+    color: white;
+    padding: 80px 0 60px 0; /* Increased top padding to account for fixed nav */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero h1, .gallery-hero p {
+    color: var(--mdc-theme-on-surface);
+}
+
+.gallery-stats {
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: var(--mdc-theme-surface);
+    border-radius: 12px;
+    min-width: 120px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--mdc-elevation-8);
+}
+
+.stat-item h4 {
+    color: var(--mdc-theme-primary);
+    font-weight: 600;
+}
+
+.gallery-section {
+    background: var(--mdc-theme-background);
+}
+
+/* Car Gallery Styles */
+.car-gallery {
+    background: var(--mdc-theme-surface);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--mdc-elevation-4);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.car-gallery:hover {
+    box-shadow: var(--mdc-elevation-8);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.car-header h2 {
+    color: var(--mdc-theme-on-surface);
+    background: linear-gradient(135deg, var(--mdc-theme-primary), var(--mdc-theme-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.car-header p {
+    color: var(--mdc-theme-on-surface);
+}
+
+.car-details .badge {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    box-shadow: var(--mdc-elevation-2);
+}
+
+/* Gallery Cards */
+.gallery-card {
+    background: var(--mdc-theme-background);
+    border-radius: 12px;
+    padding: 30px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px dashed rgba(139, 92, 246, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-card:hover {
+    border-color: var(--mdc-theme-primary);
+    background: rgba(139, 92, 246, 0.05);
+    transform: translateY(-5px);
+    box-shadow: var(--mdc-elevation-8);
+}
+
+.gallery-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover::before {
+    left: 100%;
+}
+
+.gallery-card .card-title {
+    color: var(--mdc-theme-on-surface);
+    font-weight: 600;
+    z-index: 1;
+    position: relative;
+}
+
+.placeholder-content {
+    z-index: 1;
+    position: relative;
+}
+
+.placeholder-content i {
+    color: rgba(139, 92, 246, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover .placeholder-content i {
+    color: var(--mdc-theme-primary);
+    transform: scale(1.1);
+}
+
+.placeholder-content p {
+    color: var(--mdc-theme-on-surface);
+    margin-bottom: 8px;
+}
+
+.placeholder-content small {
+    color: rgba(224, 224, 224, 0.6);
+}
+
+/* Card Type Variations */
+.after-card {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.after-card:hover {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.video-card {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.video-card:hover {
+    border-color: var(--mdc-theme-primary);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+/* Add Car Button */
+.btn-primary {
+    background: linear-gradient(135deg, var(--mdc-theme-primary) 0%, var(--mdc-theme-accent) 100%);
+    border: none;
+    padding: 16px 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    box-shadow: var(--mdc-elevation-4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--mdc-elevation-16);
+    background: linear-gradient(135deg, var(--mdc-theme-accent) 0%, var(--mdc-theme-primary) 100%);
+}
+
+/* Export Button */
+.btn-outline-primary {
+    background: transparent;
+    border: 2px solid var(--mdc-theme-primary);
+    color: var(--mdc-theme-primary);
+    padding: 16px 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-primary:hover {
+    background: var(--mdc-theme-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--mdc-elevation-8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .car-gallery {
+        padding: 30px 20px;
+    }
+    
+    .gallery-card {
+        height: 250px;
+        padding: 20px;
+    }
+    
+    .gallery-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+        margin-bottom: 1rem;
+    }
+    
+    .car-details {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .car-details .badge {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    .car-gallery {
+        padding: 20px 15px;
+    }
+    
+    .gallery-card {
+        height: 200px;
+        padding: 15px;
+    }
+    
+    .car-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .car-header p {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for new cars being added */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.car-gallery.new-car {
+    animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced hover effects */
+.gallery-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.gallery-card:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Loading state for cards */
+.gallery-card.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.gallery-card.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    border-top: 2px solid var(--mdc-theme-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Enhanced badge styling */
+.badge {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.badge:hover {
+    transform: scale(1.1);
+    box-shadow: var(--mdc-elevation-4);
+}
+
+/* Gallery grid layout improvements */
+.gallery-section .container {
+    max-width: 1400px;
+}
+
+/* Enhanced card shadows */
+.gallery-card {
+    box-shadow: var(--mdc-elevation-2);
+}
+
+.gallery-card:hover {
+    box-shadow: var(--mdc-elevation-8);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar for gallery */
+.gallery-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.gallery-section::-webkit-scrollbar-track {
+    background: var(--mdc-theme-surface);
+}
+
+.gallery-section::-webkit-scrollbar-thumb {
+    background: var(--mdc-theme-primary);
+    border-radius: 4px;
+}
+
+.gallery-section::-webkit-scrollbar-thumb:hover {
+    background: var(--mdc-theme-accent);
+}
