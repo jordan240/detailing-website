@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Eau Auto Spa</title>
+    <link rel="icon" type="image/png" href="./static.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="./static.png" alt="Eau Auto Spa Logo" class="navbar-logo me-2">
+                Eau Auto Spa
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="gallery-hero py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-4">Our Work Gallery</h1>
+                    <p class="lead mb-4">See the transformation magic we work on every vehicle. From basic washes to full detailing packages, witness the before and after results that speak for themselves.</p>
+                    <div class="gallery-stats d-flex justify-content-center gap-4 mb-4">
+                        <div class="stat-item">
+                            <i class="fas fa-car fa-2x text-primary mb-2"></i>
+                            <h4 class="mb-0" id="totalCars">0</h4>
+                            <small class="text-muted">Vehicles Detailed</small>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-star fa-2x text-warning mb-2"></i>
+                            <h4 class="mb-0">4.8</h4>
+                            <small class="text-muted">Customer Rating</small>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-heart fa-2x text-danger mb-2"></i>
+                            <h4 class="mb-0">95%</h4>
+                            <small class="text-muted">Satisfaction Rate</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Our Work Showcase</h2>
+                    <p class="lead text-muted">Browse through our completed detailing projects</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="row g-4" id="galleryGrid">
+                <!-- Gallery items will be dynamically loaded from configuration -->
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Eau Auto Spa. All rights reserved. Professional auto detailing services.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>

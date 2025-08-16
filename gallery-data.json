@@ -1,32 +1,185 @@
-[
-  {
-    "name": "Sample Car",
-    "packageType": "Full Package + Ceramic Coating",
-    "badges": [
-      {
-        "text": "Exterior",
-        "class": "badge bg-primary"
-      },
-      {
-        "text": "Interior",
-        "class": "badge bg-success"
-      },
-      {
-        "text": "Ceramic Coating",
-        "class": "badge bg-warning"
-      },
-      {
-        "text": "2.5 Hours",
-        "class": "badge bg-info"
-      }
-    ],
-    "afterPhotos": {
-      "description": "Beautiful finished result with ceramic coating applied",
-      "hasContent": true
-    },
-    "finalVideo": {
-      "description": "Final walkaround showing the completed detailing work",
-      "hasContent": true
+{
+  "_comment": "To add a new car, copy an existing car object and update the instagramReelUrl with your Instagram post URL. The URL should be in the format: https://www.instagram.com/p/POST_ID/",
+  "gallerySettings": {
+    "title": "Our Work Gallery",
+    "subtitle": "See the transformation magic we work on every vehicle. From basic washes to full detailing packages, witness the before and after results that speak for themselves.",
+    "stats": {
+      "totalCars": 10,
+      "customerRating": "4.8",
+      "satisfactionRate": "95%"
     }
-  }
-]
+  },
+  "cars": [
+    {
+      "id": 1,
+      "make": "Volkswagen",
+      "model": "Golf R",
+      "year": "2022",
+      "color": "White",
+      "packageType": "Full Package",
+      "addOns": ["Ceramic Coating"],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNOtzjtyipj",
+      "localThumbnail": "./thumbnails/vw1.jpg",
+      "notes": "Premium detailing with ceramic coating. Customer was extremely satisfied with the results.",
+      "dateAdded": "2024-01-15",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "make": "Ford",
+      "model": "Focus ST",
+      "year": "2016",
+      "color": "Black",
+      "packageType": "Exterior Only",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNOwz8vRaih",
+      "localThumbnail": "./thumbnails/ford2.jpg",
+      "notes": "exterior detail, bringing back that glossy finish and making it pop on the road. ",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "make": "Ford",
+      "model": "Mustang GT/CS 5.0",
+      "year": "2021",
+      "color": "White / Black",
+      "packageType": "Exterior Only",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNM1QyfNbA_",
+      "localThumbnail": "./thumbnails/mustang1.jpg",
+      "notes": "simple exterior wash package 🚿 with a quick interior detail 🧽 — bringing back that deep shine and making it ready to roar down the road in style.",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "make": "Honda",
+      "model": "Civic",
+      "year": "2020",
+      "color": "White",
+      "packageType": "Full Package",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNM00m9txK2",
+      "localThumbnail": "./thumbnails/honda1.jpg",
+      "notes": "simple exterior wash package 🚿 along with a full interior detail 🧼 — every surface cleaned, every corner spotless, and that fresh-car feel restored.",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "make": "Ford",
+      "model": "Mustang GT 5.0",
+      "year": "2021",
+      "color": "Black",
+      "packageType": "Full Package",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNM0FGotTpt",
+      "localThumbnail": "./thumbnails/mustang2.jpg",
+      "notes": "ur simple exterior wash package 🚿 plus a quick interior detail 🧽 brought this Mustang GT 5.0 Convertible back to life — shiny paint, spotless cabin, and ready to turn heads with the top down.",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "make": "Mercedes-Benz",
+      "model": "S580",
+      "year": "2021",
+      "color": "Black",
+      "packageType": "Exterior Only",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNMzjF8NuKF",
+      "localThumbnail": "./thumbnails/merc1.jpg",
+      "notes": "A simple exterior wash package 🌊 plus a quick interior detail 🪣 was all it took to bring this Mercedes S580 back to a fresh, elegant look inside and out.",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "make": "Ford",
+      "model": "F150",
+      "year": "2022",
+      "color": "Black",
+      "packageType": "Full Package",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNMzZKstyjI",
+      "localThumbnail": "./thumbnails/ford1.jpg",
+      "notes": "Our simple exterior wash package 🚗💧 with a quick interior detail 🧼 gave this Ford F-150 the refresh it needed — a clean shine on the outside and a tidy cabin on the inside.",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "make": "Porsche",
+      "model": "911",
+      "year": "2018",
+      "color": "Black",
+      "packageType": "Full Package",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/DNMzM7MNWCT",
+      "localThumbnail": "./thumbnails/porsche1.jpg",
+      "notes": "This Porsche 911 just received our simple exterior wash package 🚿 paired with a quick interior detail 🧽 — bringing back that sharp, clean look inside and out without the wait.",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 9,
+      "make": "Toyota",
+      "model": "Highlander",
+      "year": "2018",
+      "color": "Red",
+      "packageType": "Full Package",
+      "addOns": ["Ceramic Coating"],
+      "instagramReelUrl": "https://www.instagram.com/reel/C6gdmOesvgU",
+      "localThumbnail": "./thumbnails/toyota1.jpg",
+      "notes": "Customer wanted our complete exterior and interior detail package for both their 2018 Highlander and 2014 Corolla. Additionally, they opted for our wax package on the Highlander 🧼🧽",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "make": "Chevrolet",
+      "model": "Corvette C5",
+      "year": "2004",
+      "color": "Lemanz Blue",
+      "packageType": "Full Package",
+      "addOns": [],
+      "instagramReelUrl": "https://www.instagram.com/reel/C5wurLkL5eG",
+      "localThumbnail": "./thumbnails/vette1.jpg",
+      "notes": "Fresh detail on this 05’ Corvette C5 😁",
+      "dateAdded": "2024-01-20",
+      "featured": false
+    }
+  ],
+  "packages": [
+    {
+      "name": "Exterior Only",
+      "description": "Complete exterior detailing package",
+      "color": "primary"
+    },
+    {
+      "name": "Interior Only",
+      "description": "Complete interior detailing package",
+      "color": "success"
+    },
+    {
+      "name": "Full Package",
+      "description": "Complete interior and exterior detailing",
+      "color": "warning"
+    }
+  ],
+  "addOns": [
+    {
+      "name": "Ceramic Coating",
+      "description": "Griot's Garage Ceramic 3-in-1 Hybrid Coating",
+      "price": "+$75.00",
+      "duration": "6 months protection"
+    },
+    {
+      "name": "Leather Care",
+      "description": "Premium Leather Care Treatment",
+      "price": "+$25.00",
+      "duration": "Deep clean and condition"
+    }
+  ]
+}

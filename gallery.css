@@ -39,226 +39,490 @@ body {
     font-weight: 600;
 }
 
+/* Add Car Section */
+.add-car-section {
+    background: var(--mdc-theme-background);
+}
+
+.add-car-section .card {
+    border-radius: 12px;
+    box-shadow: var(--mdc-elevation-8);
+    border: none;
+}
+
+.add-car-section .card-header {
+    border-radius: 12px 12px 0 0;
+    background: linear-gradient(135deg, var(--mdc-theme-primary) 0%, var(--mdc-theme-accent) 100%) !important;
+}
+
+.add-car-section .form-control,
+.add-car-section .form-select {
+    border-radius: 8px;
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    padding: 12px 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--mdc-theme-surface);
+    color: var(--mdc-theme-on-surface);
+}
+
+.add-car-section .form-control:focus,
+.add-car-section .form-select:focus {
+    border-color: var(--mdc-theme-primary);
+    box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+    background: var(--mdc-theme-surface);
+    color: var(--mdc-theme-on-surface);
+}
+
+.add-car-section .form-label {
+    color: var(--mdc-theme-on-surface);
+    font-weight: 500;
+}
+
+.add-car-section .form-text {
+    color: rgba(224, 224, 224, 0.6);
+}
+
+.add-car-section .form-check-label {
+    color: var(--mdc-theme-on-surface);
+}
+
+/* Gallery Section */
 .gallery-section {
     background: var(--mdc-theme-background);
 }
 
-/* Car Gallery Styles */
-.car-gallery {
+/* Car Cards */
+.car-card {
     background: var(--mdc-theme-surface);
     border-radius: 16px;
-    padding: 40px;
+    overflow: hidden;
     box-shadow: var(--mdc-elevation-4);
     border: 1px solid rgba(139, 92, 246, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.car-gallery:hover {
-    box-shadow: var(--mdc-elevation-8);
-    border-color: rgba(139, 92, 246, 0.2);
-}
-
-.car-header h2 {
-    color: var(--mdc-theme-on-surface);
-    background: linear-gradient(135deg, var(--mdc-theme-primary), var(--mdc-theme-accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.car-header p {
-    color: var(--mdc-theme-on-surface);
-}
-
-.car-details .badge {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 500;
-    box-shadow: var(--mdc-elevation-2);
-}
-
-/* Gallery Cards */
-.gallery-card {
-    background: var(--mdc-theme-background);
-    border-radius: 12px;
-    padding: 30px;
-    height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 2px dashed rgba(139, 92, 246, 0.3);
+    height: 100%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--mdc-elevation-16);
+    border-color: var(--mdc-theme-primary);
+}
+
+.car-media-container {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    min-height: 300px;
+    max-height: 500px;
+    background: var(--mdc-theme-background);
+}
+
+.car-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.car-card:hover .car-media {
+    transform: scale(1.05);
+}
+
+/* Instagram Embed Styling */
+.instagram-embed-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mdc-theme-background);
+    padding: 0;
+    overflow: hidden;
+}
+
+.instagram-embed-iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    min-height: 400px;
+}
+
+/* Instagram Thumbnail Styling */
+.instagram-thumbnail-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background: var(--mdc-theme-background);
+}
+
+.instagram-thumbnail-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.instagram-thumbnail {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    min-height: 250px;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px 8px 0 0;
+}
+
+@media (max-width: 768px) {
+    .instagram-thumbnail {
+        min-height: 200px;
+        max-height: 300px;
+    }
+    
+    .car-media-container {
+        min-height: 200px;
+        max-height: 350px;
+    }
+}
+
+.instagram-thumbnail-link:hover .instagram-thumbnail {
+    transform: scale(1.05);
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+}
+
+.instagram-overlay i {
+    margin-bottom: 8px;
+    color: #e4405f;
+}
+
+.instagram-overlay span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.instagram-thumbnail-link:hover .instagram-overlay {
+    opacity: 1;
+}
+
+/* Instagram Reel Card Styling */
+.instagram-reel-card {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    color: white;
     position: relative;
     overflow: hidden;
 }
 
-.gallery-card:hover {
-    border-color: var(--mdc-theme-primary);
-    background: rgba(139, 92, 246, 0.05);
-    transform: translateY(-5px);
-    box-shadow: var(--mdc-elevation-8);
-}
-
-.gallery-card::before {
+.instagram-reel-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.instagram-reel-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.instagram-reel-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instagram-reel-content {
+    z-index: 1;
+    position: relative;
+}
+
+.instagram-reel-icon {
+    margin-bottom: 15px;
+}
+
+.instagram-reel-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.instagram-reel-id {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-family: monospace;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Loading Spinner */
+.gallery-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background: var(--mdc-theme-surface);
+    border-radius: 16px;
+}
+
+.spinner-border {
+    color: var(--mdc-theme-primary);
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Progress Bar Styling */
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(139, 92, 246, 0.2);
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(135deg, var(--mdc-theme-primary) 0%, var(--mdc-theme-accent) 100%);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    font-size: 0.7rem;
+    line-height: 8px;
+    color: white;
+    text-align: center;
+}
+
+/* Remove old Instagram media styles that are no longer needed */
+.instagram-media {
+    display: none;
+}
+
+.instagram-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
-    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    padding: 20px;
 }
 
-.gallery-card:hover::before {
-    left: 100%;
+.instagram-placeholder i {
+    color: var(--mdc-theme-primary);
+    margin-bottom: 10px;
 }
 
-.gallery-card .card-title {
+.instagram-placeholder p {
+    color: var(--mdc-theme-on-surface);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.instagram-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.instagram-fallback i {
+    color: var(--mdc-theme-primary);
+    margin-bottom: 10px;
+}
+
+.instagram-fallback p {
+    color: var(--mdc-theme-on-surface);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.instagram-fallback small {
+    color: rgba(224, 224, 224, 0.6);
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+.car-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.car-title {
     color: var(--mdc-theme-on-surface);
     font-weight: 600;
-    z-index: 1;
-    position: relative;
-}
-
-.placeholder-content {
-    z-index: 1;
-    position: relative;
-}
-
-.placeholder-content i {
-    color: rgba(139, 92, 246, 0.4);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gallery-card:hover .placeholder-content i {
-    color: var(--mdc-theme-primary);
-    transform: scale(1.1);
-}
-
-.placeholder-content p {
-    color: var(--mdc-theme-on-surface);
     margin-bottom: 8px;
+    font-size: 1.1rem;
 }
 
-.placeholder-content small {
+.car-color {
+    color: rgba(224, 224, 224, 0.7);
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.package-info {
+    margin-bottom: 12px;
+}
+
+.package-info .badge {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.add-ons, .notes {
+    background: rgba(139, 92, 246, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--mdc-theme-primary);
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+}
+
+.add-ons strong, .notes strong {
+    color: var(--mdc-theme-primary);
+}
+
+.car-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.car-footer small {
     color: rgba(224, 224, 224, 0.6);
 }
 
-/* Card Type Variations */
-.after-card {
-    border-color: rgba(16, 185, 129, 0.3);
+.car-footer .btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
 }
 
-.after-card:hover {
-    border-color: #10b981;
-    background: rgba(16, 185, 129, 0.05);
+/* Empty Gallery State */
+.empty-gallery {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.video-card {
-    border-color: rgba(139, 92, 246, 0.3);
+.empty-gallery i {
+    color: rgba(139, 92, 246, 0.3);
+    margin-bottom: 20px;
 }
 
-.video-card:hover {
-    border-color: var(--mdc-theme-primary);
-    background: rgba(139, 92, 246, 0.05);
+.empty-gallery h4 {
+    color: rgba(224, 224, 224, 0.6);
+    margin-bottom: 10px;
 }
 
-/* Add Car Button */
-.btn-primary {
-    background: linear-gradient(135deg, var(--mdc-theme-primary) 0%, var(--mdc-theme-accent) 100%);
-    border: none;
-    padding: 16px 32px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 8px;
-    box-shadow: var(--mdc-elevation-4);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.empty-gallery p {
+    color: rgba(224, 224, 224, 0.5);
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--mdc-elevation-16);
-    background: linear-gradient(135deg, var(--mdc-theme-accent) 0%, var(--mdc-theme-primary) 100%);
-}
-
-/* Export Button */
-.btn-outline-primary {
-    background: transparent;
-    border: 2px solid var(--mdc-theme-primary);
-    color: var(--mdc-theme-primary);
-    padding: 16px 32px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-outline-primary:hover {
-    background: var(--mdc-theme-primary);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: var(--mdc-elevation-8);
+/* Gallery Grid */
+#galleryGrid {
+    min-height: 400px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .car-gallery {
-        padding: 30px 20px;
+    .gallery-container {
+        padding-top: 100px;
     }
     
-    .gallery-card {
-        height: 250px;
-        padding: 20px;
+    .gallery-header h1 {
+        font-size: 2.5rem;
     }
     
-    .gallery-stats {
-        flex-direction: column;
-        align-items: center;
+    .gallery-header p {
+        font-size: 1.1rem;
     }
     
-    .stat-item {
-        min-width: 100px;
-        margin-bottom: 1rem;
+    .car-card {
+        margin-bottom: 2rem;
     }
     
-    .car-details {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .car-details .badge {
-        margin-bottom: 0.5rem;
+    /* Logo responsive adjustments */
+    .navbar-logo {
+        width: 35px;
+        height: 35px;
     }
 }
 
 @media (max-width: 576px) {
-    .gallery-hero {
-        padding-top: 100px;
-        padding-bottom: 60px;
+    .gallery-container {
+        padding-top: 120px;
     }
     
-    .car-gallery {
-        padding: 20px 15px;
+    .gallery-header h1 {
+        font-size: 2rem;
     }
     
-    .gallery-card {
-        height: 200px;
-        padding: 15px;
-    }
-    
-    .car-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .car-header p {
+    .gallery-header p {
         font-size: 1rem;
+    }
+    
+    .car-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Logo responsive adjustments for mobile */
+    .navbar-logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
     }
 }
 
@@ -274,12 +538,12 @@ body {
     }
 }
 
-.car-gallery.new-car {
+.car-card.new-car {
     animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Enhanced hover effects */
-.gallery-card::after {
+.car-card::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -292,34 +556,9 @@ body {
     transition: width 0.6s, height 0.6s;
 }
 
-.gallery-card:active::after {
+.car-card:active::after {
     width: 300px;
     height: 300px;
-}
-
-/* Loading state for cards */
-.gallery-card.loading {
-    pointer-events: none;
-    opacity: 0.7;
-}
-
-.gallery-card.loading::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(139, 92, 246, 0.3);
-    border-top: 2px solid var(--mdc-theme-primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Enhanced badge styling */
@@ -338,11 +577,11 @@ body {
 }
 
 /* Enhanced card shadows */
-.gallery-card {
+.car-card {
     box-shadow: var(--mdc-elevation-2);
 }
 
-.gallery-card:hover {
+.car-card:hover {
     box-shadow: var(--mdc-elevation-8);
 }
 
@@ -367,4 +606,106 @@ body {
 
 .gallery-section::-webkit-scrollbar-thumb:hover {
     background: var(--mdc-theme-accent);
+}
+
+/* Form styling enhancements */
+.form-check-input:checked {
+    background-color: var(--mdc-theme-primary);
+    border-color: var(--mdc-theme-primary);
+}
+
+.form-check-input:focus {
+    border-color: var(--mdc-theme-primary);
+    box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+}
+
+/* Button enhancements */
+.btn-primary {
+    background: linear-gradient(135deg, var(--mdc-theme-primary) 0%, var(--mdc-theme-accent) 100%);
+    border: none;
+    padding: 16px 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    box-shadow: var(--mdc-elevation-4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--mdc-elevation-16);
+    background: linear-gradient(135deg, var(--mdc-theme-accent) 0%, var(--mdc-theme-primary) 100%);
+}
+
+.btn-outline-primary {
+    background: transparent;
+    border: 2px solid var(--mdc-theme-primary);
+    color: var(--mdc-theme-primary);
+    padding: 16px 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-primary:hover {
+    background: var(--mdc-theme-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--mdc-elevation-8);
+}
+
+/* Notification styling */
+.alert {
+    border-radius: 8px;
+    border: none;
+    box-shadow: var(--mdc-elevation-8);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, #8b5cf6 0%, #1e1b4b 100%);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1rem 0;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #ffffff !important;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
 }

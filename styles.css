@@ -40,12 +40,28 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 1rem 0;
     box-shadow: var(--mdc-elevation-4);
+    z-index: 1030; /* Ensure navbar is above other elements */
 }
 
 .navbar-brand {
     font-size: 1.5rem;
     color: var(--mdc-theme-on-primary) !important;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1);
+    box-shadow: var(--mdc-elevation-8);
 }
 
 .navbar-nav .nav-link {
@@ -92,6 +108,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
+    padding-top: 80px; /* Add top padding to prevent navbar overlap */
 }
 
 .hero-overlay {
@@ -103,6 +120,7 @@ body {
     bottom: 0;
     display: flex;
     align-items: center;
+    padding-top: 20px; /* Add some top padding to the overlay content */
 }
 
 /* Enhanced background image quality */
@@ -397,6 +415,78 @@ body {
     border-color: var(--mdc-theme-primary);
 }
 
+/* Package Action Buttons */
+.package-actions {
+    margin-top: 1rem;
+}
+
+.package-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid;
+    font-weight: 500;
+    padding: 12px 8px;
+    height: auto;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.package-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--mdc-elevation-8);
+}
+
+.package-btn .btn-text {
+    line-height: 1.2;
+}
+
+.package-btn .btn-text strong {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.package-btn .btn-text small {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.package-btn i {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* Package Modal Styling */
+.package-summary {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.price-display h3,
+.time-display h3 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.action-buttons .btn {
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--mdc-elevation-8);
+}
+
 /* Lists */
 .service-card ul li {
     padding: 12px 0;
@@ -559,6 +649,44 @@ footer {
     box-shadow: var(--mdc-elevation-4);
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--mdc-elevation-4);
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--mdc-elevation-8);
+}
+
+.footer-content h5 {
+    color: var(--mdc-theme-on-primary);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.footer-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    max-width: 400px;
+}
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 1.5rem auto;
+    max-width: 300px;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -595,6 +723,10 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero-section {
+        padding-top: 100px; /* Increase top padding for tablets */
+    }
+    
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -629,9 +761,24 @@ footer {
     .price-item .price {
         font-size: 1.3rem;
     }
+    
+    /* Logo responsive adjustments */
+    .navbar-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .footer-logo {
+        width: 70px;
+        height: 70px;
+    }
 }
 
 @media (max-width: 576px) {
+    .hero-section {
+        padding-top: 120px; /* Increase top padding for mobile devices */
+    }
+    
     .hero-section h1 {
         font-size: 2rem;
     }
@@ -658,6 +805,21 @@ footer {
     
     .price-item .price {
         font-size: 1.2rem;
+    }
+    
+    /* Logo responsive adjustments for mobile */
+    .navbar-logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .footer-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
     }
 }
 
